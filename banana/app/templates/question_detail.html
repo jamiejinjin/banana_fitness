@@ -1,0 +1,24 @@
+{% extends "appbuilder/base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1>{{context.title}}</h1>
+  <p>{{context.content}}</p>
+  <p>
+    Asker: {{context.asker}}
+  </p>
+    <p>
+    Ask Time: {{context.asktime}}
+    </p>
+
+</div>
+
+<div>
+    Answers:
+    {%for answer in context.answers%}
+    <div>
+        {{answer.content}}<br> {{answer.created_at}}{{answer.updated_at}}
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}
